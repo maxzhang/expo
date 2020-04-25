@@ -127,7 +127,8 @@ NS_ASSUME_NONNULL_BEGIN
     NSException *e = [NSException exceptionWithName:@"ExpoFatalError"
                                              reason:[NSString stringWithFormat:@"Expo encountered a fatal error: %@", [error localizedDescription]]
                                            userInfo:@{NSUnderlyingErrorKey: error}];
-    @throw e;
+    //@throw e;
+    return;
   }
 
   NSString *domain = (error && error.domain) ? error.domain : @"";
